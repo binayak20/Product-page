@@ -501,7 +501,7 @@ export default function Products() {
 									<Grid item xs={4} sm={12}>
 										<Avatar
 											variant='square'
-											src='/images/slider-1.png'
+											src='images/slider-1.png'
 											className={classes.squareProductList}
 										/>
 									</Grid>
