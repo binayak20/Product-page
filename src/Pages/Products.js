@@ -204,15 +204,15 @@ const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const footers = [
 	{
 		title: 'Free Delivery',
-		src: '/images/car.png',
+		src: 'images/car.png',
 	},
 	{
 		title: 'Buyer Protection',
-		src: '/images/warrenty.png',
+		src: 'images/warrenty.png',
 	},
 	{
 		title: 'Customer Support',
-		src: '/images/dial.png',
+		src: 'images/dial.png',
 	},
 ];
 export default function Products() {
@@ -269,7 +269,7 @@ export default function Products() {
 							<Grid item xs={3} sm={6}>
 								<Avatar
 									variant='square'
-									src='/images/rectangle.jpg'
+									src='images/rectangle.jpg'
 									className={classes.square}
 								/>
 							</Grid>
@@ -354,7 +354,7 @@ export default function Products() {
 										<span
 											className={classes.imageSrc}
 											style={{
-												backgroundImage: `url(/images/slider-1.png)`,
+												backgroundImage: `url(images/slider-1.png)`,
 											}}
 										/>
 										<span className={classes.imageBackdrop} />
@@ -384,7 +384,7 @@ export default function Products() {
 										<span
 											className={classes.imageSrc}
 											style={{
-												backgroundImage: `url(/images/slider-2.png)`,
+												backgroundImage: `url(images/slider-2.png)`,
 											}}
 										/>
 										<span className={classes.imageBackdrop} />
@@ -414,7 +414,7 @@ export default function Products() {
 										<span
 											className={classes.imageSrc}
 											style={{
-												backgroundImage: `url(/images/slider-1.png)`,
+												backgroundImage: `url(images/slider-1.png)`,
 											}}
 										/>
 										<span className={classes.imageBackdrop} />
@@ -444,7 +444,7 @@ export default function Products() {
 										<span
 											className={classes.imageSrc}
 											style={{
-												backgroundImage: `url(/images/slider-2.png)`,
+												backgroundImage: `url(images/slider-2.png)`,
 											}}
 										/>
 										<span className={classes.imageBackdrop} />
