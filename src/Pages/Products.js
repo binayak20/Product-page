@@ -11,14 +11,22 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import { Avatar, Divider } from '@material-ui/core';
+import { Avatar, Badge, Divider } from '@material-ui/core';
 import ItemsCarousel from 'react-items-carousel';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
+import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
+import HomeIcon from '@material-ui/icons/Home';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import Fab from '@material-ui/core/Fab';
+import BorderAllIcon from '@material-ui/icons/BorderAll';
 
 const useStyles = makeStyles((theme) => ({
+	extendedIcon: {
+		marginRight: theme.spacing(1),
+	},
 	icon: {
 		marginRight: theme.spacing(2),
 	},
@@ -182,21 +190,29 @@ const useStyles = makeStyles((theme) => ({
 		left: 'calc(50% - 9px)',
 		transition: theme.transitions.create('opacity'),
 	},
+	whatsAppButton: {
+		background: '#49c759',
+		color: '#ffffff',
+	},
+	orderIcon: {
+		background: '#4d4d4d',
+		color: '#ffffff',
+	},
 }));
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const footers = [
 	{
 		title: 'Free Delivery',
-		src: 'https://source.unsplash.com/random',
+		src: '/images/car.png',
 	},
 	{
 		title: 'Buyer Protection',
-		src: 'https://source.unsplash.com/random',
+		src: '/images/warrenty.png',
 	},
 	{
 		title: 'Customer Support',
-		src: 'https://source.unsplash.com/random',
+		src: '/images/dial.png',
 	},
 ];
 export default function Products() {
@@ -253,12 +269,25 @@ export default function Products() {
 							<Grid item xs={3} sm={6}>
 								<Avatar
 									variant='square'
-									src='https://source.unsplash.com/random'
+									src='/images/rectangle.jpg'
 									className={classes.square}
 								/>
 							</Grid>
 							<Grid item xs>
-								<Typography gutterBottom variant='h6'>
+								<Typography
+									gutterBottom
+									variant='h6'
+									// style={{
+									// 	fontFamily: 'GalanoGrotesque',
+									// 	fontSize: '18px',
+									// 	fontWeight: 500,
+									// 	fontStretch: 'normal',
+									// 	fontStyle: 'normal',
+									// 	lineHeight: 1.44,
+									// 	letterSpacing: 'normal',
+									// 	color: '#1a181e',
+									// }}
+								>
 									Mano Super Market
 								</Typography>
 								<Grid container spacing={4} className={classes.iconText}>
@@ -325,7 +354,7 @@ export default function Products() {
 										<span
 											className={classes.imageSrc}
 											style={{
-												backgroundImage: `url(https://source.unsplash.com/random)`,
+												backgroundImage: `url(/images/slider-1.png)`,
 											}}
 										/>
 										<span className={classes.imageBackdrop} />
@@ -355,7 +384,7 @@ export default function Products() {
 										<span
 											className={classes.imageSrc}
 											style={{
-												backgroundImage: `url(https://source.unsplash.com/random)`,
+												backgroundImage: `url(/images/slider-2.png)`,
 											}}
 										/>
 										<span className={classes.imageBackdrop} />
@@ -385,7 +414,7 @@ export default function Products() {
 										<span
 											className={classes.imageSrc}
 											style={{
-												backgroundImage: `url(https://source.unsplash.com/random)`,
+												backgroundImage: `url(/images/slider-1.png)`,
 											}}
 										/>
 										<span className={classes.imageBackdrop} />
@@ -415,7 +444,7 @@ export default function Products() {
 										<span
 											className={classes.imageSrc}
 											style={{
-												backgroundImage: `url(https://source.unsplash.com/random)`,
+												backgroundImage: `url(/images/slider-2.png)`,
 											}}
 										/>
 										<span className={classes.imageBackdrop} />
@@ -472,7 +501,7 @@ export default function Products() {
 									<Grid item xs={4} sm={12}>
 										<Avatar
 											variant='square'
-											src='https://source.unsplash.com/random'
+											src='/images/slider-1.png'
 											className={classes.squareProductList}
 										/>
 									</Grid>
@@ -484,7 +513,7 @@ export default function Products() {
 											1 Unit
 										</Typography>
 										<Typography gutterBottom variant='h6'>
-											$209
+											₹209
 											<div style={{ float: 'right' }}>
 												<Button variant='outlined' color='primary'>
 													Add +
@@ -499,37 +528,126 @@ export default function Products() {
 				</div>
 			</main>
 
-			<footer className={classes.footer}>
-				<Grid
-					container
-					spacing={4}
-					justify='space-evenly'
-					alignContent='center'
-				>
-					{footers.map((footer) => (
-						<Grid item xs={4} sm={4} key={footer.title} alignItems='center'>
-							<img src={footer.src} alt='text' width={50} />
-							<Typography gutterBottom>{footer.title}</Typography>
+			<footer>
+				<div className={classes.footer}>
+					<Grid
+						container
+						spacing={4}
+						justify='space-evenly'
+						alignContent='center'
+					>
+						{footers.map((footer) => (
+							<Grid item xs={4} sm={4} key={footer.title} alignItems='center'>
+								<img src={footer.src} alt='text' width={50} />
+								<Typography gutterBottom align='center'>
+									{footer.title}
+								</Typography>
+							</Grid>
+						))}
+					</Grid>
+
+					<Divider style={{ background: '#fff' }} />
+					<Typography
+						align='center'
+						variant='overline'
+						display='block'
+						gutterBottom
+						style={{ fontSize: 14, opacity: 0.6 }}
+					>
+						STORE DETAILS
+					</Typography>
+					<Typography variant='h6' align='center' gutterBottom>
+						Mano Super Market
+					</Typography>
+
+					<Typography
+						variant='subtitle1'
+						align='center'
+						component='p'
+						style={{ opacity: 0.8 }}
+					>
+						Krishvi Terazzao, 80 Feet Road Indirabagar, Bengaluru, Karnataka
+					</Typography>
+					<Grid container spacing={1} item xs={12} sm={6} md={4}>
+						<Grid item xs={9} sm={12}>
+							<div style={{ textAlign: 'center', marginTop: 10 }}>
+								<Button
+									variant='contained'
+									//	color='secondary'
+
+									className={classes.whatsAppButton}
+									startIcon={<WhatsAppIcon />}
+								>
+									Chat with us
+								</Button>
+							</div>
 						</Grid>
-					))}
-				</Grid>
-
-				<Divider style={{ background: '#fff' }} />
-				<Typography
-					align='center'
-					variant='overline'
-					display='block'
-					gutterBottom
-				>
-					STORE DETAILS
-				</Typography>
-				<Typography variant='h6' align='center' gutterBottom>
-					Mano Super Market
-				</Typography>
-
-				<Typography variant='subtitle1' align='center' component='p'>
-					Krishvi Terazzao, 80 Feet Road Indirabagar, Bengaluru, Karnataka
-				</Typography>
+						<Grid item xs>
+							<div style={{ float: 'right' }}>
+								<Fab
+									size='large'
+									//	color='secondary'
+									aria-label='add'
+									className={classes.orderIcon}
+								>
+									<BorderAllIcon />
+								</Fab>
+							</div>
+						</Grid>
+					</Grid>
+				</div>
+				<div>
+					<Grid container spacing={1} item xs={12} sm={6} md={4}>
+						<Grid item xs={4} sm={12}>
+							{/* <Fab variant='extended'>
+								<HomeIcon className={classes.extendedIcon} />
+								Home
+							</Fab> */}
+							<div style={{ margin: 15 }}>
+								<Button
+									startIcon={<HomeIcon className={classes.extendedIcon} />}
+									href='#text-buttons'
+									color='primary'
+								>
+									Home
+								</Button>
+							</div>
+						</Grid>
+						<Grid spacing={5} item xs={4} sm={12}>
+							<div style={{ margin: 15 }}>
+								<Button href='#text-buttons'>
+									<Badge
+										anchorOrigin={{
+											vertical: 'top',
+											horizontal: 'left',
+										}}
+										badgeContent={9}
+										color='secondary'
+									>
+										<LocalMallIcon /> Bag
+									</Badge>
+								</Button>
+							</div>
+						</Grid>
+						<Grid item xs>
+							{/* <Fab variant='extended'>
+								<HomeIcon className={classes.extendedIcon} />
+								Home
+							</Fab> */}
+							<div style={{ marginTop: 15 }}>
+								<Button
+									startIcon={
+										<FormatListBulletedIcon className={classes.extendedIcon} />
+									}
+									href='#text-buttons'
+									color='primary'
+								>
+									Orders
+								</Button>
+							</div>
+						</Grid>
+					</Grid>
+				</div>
 			</footer>
 		</React.Fragment>
 	);
